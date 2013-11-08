@@ -4,7 +4,7 @@ EMCC=emcc
 cd CBLAS/src
 
 for i in `ls *.c`; do
-     ${EMCC} -c $i;
+     ${EMCC} -c $i -I../include;
 done
 
 for i in `ls *.f`; do
