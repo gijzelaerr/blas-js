@@ -6,13 +6,13 @@ my naive attempt to compile blas to javascript using emscripten.
 Usage
 -----
 
-get emscripten::
+get emscripten and add it to your system path::
 
-    https://github.com/kripken/emscripten
+    $ git clone https://github.com/kripken/emscripten
+    $ export PATH=${PATH}:`pwd`/emscripten
 
 run::
 
- * get.sh
  * dep.sh (for ubuntu)
  * doit.sh
 

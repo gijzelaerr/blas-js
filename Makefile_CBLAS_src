@@ -7,7 +7,7 @@ include $(dlvl)/Makefile.in
 # Erase all object and archive files
 #
 clean:
-	rm -f *.o a.out core 
+	rm -f *.o a.out core *.s *.bc
 
 # Error handling routines for level 2 & 3
 
@@ -239,9 +239,10 @@ all: $(alev)
 	$(RANLIB) $(CBLIB)
 
 
-.SUFFIXES: .o .c .f
+.SUFFIXES: .o .c .f .s
 
 .c.o:
 	$(CC) $(CFLAGS) -I../include -c $*.c
 .f.o:
-	$(FC) $(FFLAGS) -c $*.f -o $*.o
+	$(FC) $(FFLAGS) -c $*.f -o $*.s
+	$(AS) $(ASFLAGS) $*.s -o $*.o

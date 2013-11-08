@@ -30,7 +30,8 @@ CBLIB = ../lib/cblas_$(PLAT).a
 #-----------------------------------------------------------------------------
 
 CC = emcc
-FC= gcc-4.7
+FC = gcc-4.7
+AS = llvm-as
 LOADER = $(FC)
 
 #-----------------------------------------------------------------------------
@@ -38,7 +39,7 @@ LOADER = $(FC)
 #-----------------------------------------------------------------------------
 
 CFLAGS = -O2 -DADD_
-FFLAGS = -S -fplugin=/usr/lib/gcc/x86_64-linux-gnu/4.7/plugin/dragonegg.so -fplugin-arg-dragonegg-emit-ir -O2
+FFLAGS = -S -fplugin=/usr/lib/gcc/x86_64-linux-gnu/4.7/plugin/dragonegg.so -fplugin-arg-dragonegg-emit-ir -O2 
 
 #-----------------------------------------------------------------------------
 # Archive programs and flags
